@@ -1,0 +1,9 @@
+-- Concilia duas tabelas por meio de um ID único por meio de LEFT JOIN --
+
+df_operacoes = xl("A1:C5", headers=True)
+
+df_eventos = xl("F1:G5", headers=True)
+
+df_consolidado = pd.merge(df_operacoes, df_eventos, on="ID_OPERACOES", how='left')
+
+df_consolidado
