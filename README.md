@@ -1,25 +1,32 @@
 # Python
 
-Repositorio para estudos, testes e implementacoes em Python.
+Repositorio pessoal de apoio geral para desenvolvimento em Python.
 
-## Conteudo atual
+A ideia aqui nao e manter um unico projeto, e sim reunir material reutilizavel, exemplos, notas tecnicas, benchmarks, notebooks e casos de sucesso.
 
-- [Caso de Sucesso: Leitura de Excel com Polars](./docs/CASE_SUCESSO_LEITURA_EXCEL_POLARS.md)
+## Estrutura
 
-## Destaque
+- `docs/`: documentacao, notas tecnicas, comparativos e casos de sucesso
+- `notebooks/`: exploracao, estudos e prototipos em Jupyter
+- `scripts/`: scripts reutilizaveis e mais proximos de uso operacional
+- `exemplos/`: exemplos curtos e didaticos
+- `benchmarks/`: comparacoes de desempenho reproduziveis
+- `templates/`: modelos base para novos estudos e implementacoes
+- `requirements/`: dependencias separadas por contexto
 
-O primeiro registro publicado neste repositorio documenta a melhoria de performance na leitura de arquivos `.xlsx` para um projeto de conciliacao contabil.
+## Conteudo em destaque
 
-A solucao adotada compara a abordagem tradicional com `pandas + openpyxl` e a abordagem otimizada com `polars + calamine`.
+- [Caso de Sucesso: Leitura de Excel com Polars](./docs/casos_sucesso/leitura_excel_polars.md)
 
-## Estrutura inicial sugerida
+## Como usar este repositorio
 
-- `docs/`: documentacao, casos de sucesso e notas tecnicas
-- futuros notebooks e scripts podem ser organizados por tema ou projeto
+- documentacao vai para `docs/`
+- notebooks exploratorios vao para `notebooks/`
+- scripts reutilizaveis vao para `scripts/`
+- exemplos minimos vao para `exemplos/`
+- testes de performance vao para `benchmarks/`
+- modelos base vao para `templates/`
 
-## Proximos passos sugeridos
+## Diretriz de organizacao
 
-- organizar casos de uso por pasta ou tema
-- documentar benchmarks de performance
-- adicionar exemplos de carga para SQLite
-- incluir notebooks e scripts reutilizaveis
+Prefira nomear arquivos pelo assunto e objetivo, evitando nomes vagos como `teste`, `final` e `v2`.
