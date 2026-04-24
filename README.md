@@ -19,6 +19,7 @@ A ideia aqui nao e manter um unico projeto, e sim reunir material reutilizavel, 
 
 - [Caso de Sucesso: Leitura de Excel com Polars](./docs/casos_sucesso/leitura_excel_polars.md)
 - [Modelo simples: Leitura de Excel com pandas e openpyxl](./modelos/leitura_excel_openpyxl_pandas.py)
+- [Modelo: Leitura de Excel com Polars e calamine](./modelos/leitura_excel_polars.md)
 
 ## Como usar este repositorio
 
