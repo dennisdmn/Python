@@ -7,29 +7,39 @@ A ideia aqui nao e manter um unico projeto, e sim reunir material reutilizavel, 
 ## Estrutura
 
 - `docs/`: documentacao, notas tecnicas, comparativos e casos de sucesso
-- `notebooks/`: exploracao, estudos e prototipos em Jupyter
+- `exemplos/`: exemplos curtos, didaticos e autocontidos
+- `modelos/`: modelos simples e reutilizaveis para adaptar em projetos reais
 - `scripts/`: scripts reutilizaveis e mais proximos de uso operacional
-- `exemplos/`: exemplos curtos e didaticos
-- `modelos/`: modelos simples e reutilizaveis para tarefas comuns
+- `notebooks/`: exploracao, estudos e prototipos em Jupyter
 - `benchmarks/`: comparacoes de desempenho reproduziveis
 - `templates/`: modelos base para novos estudos e implementacoes
 - `requirements/`: dependencias separadas por contexto
 
 ## Conteudo em destaque
 
-- [Caso de Sucesso: Leitura de Excel com Polars](./docs/casos_sucesso/leitura_excel_polars.md)
+### Exemplos rapidos
+
+- [Exemplo: Leitura de Excel com pandas e openpyxl](./exemplos/pandas_ler_excel_openpyxl.py)
+- [Exemplo: Leitura de Excel com Polars e calamine](./exemplos/polars_ler_excel_calamine.py)
+
+### Modelos reutilizaveis
+
 - [Modelo simples: Leitura de Excel com pandas e openpyxl](./modelos/leitura_excel_openpyxl_pandas.py)
 - [Modelo: Leitura de Excel com Polars e calamine](./modelos/leitura_excel_polars.md)
 
+### Documentacao e casos de sucesso
+
+- [Caso de Sucesso: Leitura de Excel com Polars](./docs/casos_sucesso/leitura_excel_polars.md)
+
 ## Como usar este repositorio
 
-- documentacao vai para `docs/`
-- notebooks exploratorios vao para `notebooks/`
-- scripts reutilizaveis vao para `scripts/`
-- exemplos minimos vao para `exemplos/`
-- modelos simples e reutilizaveis vao para `modelos/`
-- testes de performance vao para `benchmarks/`
-- modelos base vao para `templates/`
+- use `exemplos/` para aprender uma tecnica isolada rapidamente
+- use `modelos/` como ponto de partida para adaptar em rotinas reais
+- use `docs/` para registrar contexto, decisoes tecnicas, comparativos e casos de sucesso
+- use `scripts/` para codigos mais operacionais ou recorrentes
+- use `notebooks/` para exploracao e prototipagem
+- use `benchmarks/` para testes de desempenho reproduziveis
+- use `templates/` para bases genericas de novos estudos ou implementacoes
 
 ## Diretriz de organizacao
 
