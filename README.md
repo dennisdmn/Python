@@ -27,6 +27,10 @@ A ideia aqui nao e manter um unico projeto, e sim reunir material reutilizavel, 
 - [Modelo simples: Leitura de Excel com pandas e openpyxl](./modelos/leitura_excel_openpyxl_pandas.py)
 - [Modelo: Leitura de Excel com Polars e calamine](./modelos/leitura_excel_polars.md)
 
+### Notebooks
+
+- [Benchmark: pandas/openpyxl vs Polars/calamine](./notebooks/benchmark_pandas_openpyxl_vs_polars_calamine.ipynb)
+
 ### Documentacao e casos de sucesso
 
 - [Caso de Sucesso: Leitura de Excel com Polars](./docs/casos_sucesso/leitura_excel_polars.md)
