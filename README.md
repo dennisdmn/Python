@@ -2,7 +2,7 @@
 
 Repositorio pessoal de apoio geral para desenvolvimento em Python.
 
-A ideia aqui nao e manter um unico projeto, e sim reunir material reutilizavel, exemplos, notas tecnicas, benchmarks, notebooks e casos de sucesso.
+A ideia aqui nao e manter um unico projeto, e sim reunir material reutilizavel, exemplos, notas tecnicas, benchmarks, notebooks, modelos e casos de sucesso.
 
 ## Estrutura
 
@@ -10,6 +10,7 @@ A ideia aqui nao e manter um unico projeto, e sim reunir material reutilizavel, 
 - `notebooks/`: exploracao, estudos e prototipos em Jupyter
 - `scripts/`: scripts reutilizaveis e mais proximos de uso operacional
 - `exemplos/`: exemplos curtos e didaticos
+- `modelos/`: modelos simples e reutilizaveis para tarefas comuns
 - `benchmarks/`: comparacoes de desempenho reproduziveis
 - `templates/`: modelos base para novos estudos e implementacoes
 - `requirements/`: dependencias separadas por contexto
@@ -17,6 +18,7 @@ A ideia aqui nao e manter um unico projeto, e sim reunir material reutilizavel, 
 ## Conteudo em destaque
 
 - [Caso de Sucesso: Leitura de Excel com Polars](./docs/casos_sucesso/leitura_excel_polars.md)
+- [Modelo simples: Leitura de Excel com pandas e openpyxl](./modelos/leitura_excel_openpyxl_pandas.py)
 
 ## Como usar este repositorio
 
@@ -24,6 +26,7 @@ A ideia aqui nao e manter um unico projeto, e sim reunir material reutilizavel, 
 - notebooks exploratorios vao para `notebooks/`
 - scripts reutilizaveis vao para `scripts/`
 - exemplos minimos vao para `exemplos/`
+- modelos simples e reutilizaveis vao para `modelos/`
 - testes de performance vao para `benchmarks/`
 - modelos base vao para `templates/`
 
