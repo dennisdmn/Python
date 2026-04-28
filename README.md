@@ -19,8 +19,11 @@ A ideia aqui nao e manter um unico projeto, e sim reunir material reutilizavel, 
 
 ### Exemplos rapidos
 
-- [Exemplo: Leitura de Excel com pandas e openpyxl](./exemplos/pandas_ler_excel_openpyxl.py)
-- [Exemplo: Leitura de Excel com Polars e calamine](./exemplos/polars_ler_excel_calamine.py)
+- [Indice de exemplos](./exemplos/README.md)
+- [Exemplo: Leitura de Excel com pandas e openpyxl](./exemplos/excel/pandas_ler_excel_openpyxl.py)
+- [Exemplo: Leitura de Excel com Polars e calamine](./exemplos/excel/polars_ler_excel_calamine.py)
+- [Exemplo: Selecionar diretorio no Windows sem funcao](./exemplos/windows/exemplo_escolher_diretorio_sem_funcao.py)
+- [Exemplo: Selecionar diretorio no Windows com funcao reutilizavel](./exemplos/windows/exemplo_escolher_diretorio_com_funcao.py)
 
 ### Modelos reutilizaveis
 
@@ -44,6 +47,13 @@ A ideia aqui nao e manter um unico projeto, e sim reunir material reutilizavel, 
 - use `notebooks/` para exploracao e prototipagem
 - use `benchmarks/` para testes de desempenho reproduziveis
 - use `templates/` para bases genericas de novos estudos ou implementacoes
+
+## Organizacao de exemplos
+
+Os exemplos ficam agrupados por tema dentro de `exemplos/`:
+
+- `exemplos/excel/`: leitura e manipulacao de planilhas
+- `exemplos/windows/`: automacoes e interacoes locais especificas do Windows
 
 ## Diretriz de organizacao
 
