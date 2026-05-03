@@ -29,6 +29,11 @@ A ideia aqui nao e manter um unico projeto, e sim reunir material reutilizavel, 
 
 - [Modelo simples: Leitura de Excel com pandas e openpyxl](./modelos/leitura_excel_openpyxl_pandas.py)
 - [Modelo: Leitura de Excel com Polars e calamine](./modelos/leitura_excel_polars.md)
+- [Modelo: Selecao de entradas por CLI ou janela](./modelos/selecao_entradas_cli_janela.py)
+
+### Padroes operacionais
+
+- [Selecao de entradas por CLI ou janela](./modelos/selecao_entradas_cli_janela.py): modelo para scripts que precisam escolher pasta de entrada, pasta de saida e arquivo de apoio, com suporte a uso manual e automatizado.
 
 ### Notebooks
 
