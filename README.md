@@ -30,11 +30,13 @@ A ideia aqui nao e manter um unico projeto, e sim reunir material reutilizavel, 
 - [Modelo simples: Leitura de Excel com pandas e openpyxl](./modelos/leitura_excel_openpyxl_pandas.py)
 - [Modelo: Leitura de Excel com Polars e calamine](./modelos/leitura_excel_polars.md)
 - [Modelo basico: Escolher pasta pelo usuario](./modelos/escolher_pasta_basico.py)
+- [Modelo basico: Escolher pasta e listar arquivos](./modelos/escolher_pasta_e_listar_arquivos.py)
 - [Modelo: Selecao de entradas por CLI ou janela](./modelos/selecao_entradas_cli_janela.py)
 
 ### Padroes operacionais
 
 - [Escolher pasta pelo usuario](./modelos/escolher_pasta_basico.py): modelo essencial para abrir uma janela local, selecionar uma pasta e retornar o caminho como `Path`.
+- [Escolher pasta e listar arquivos](./modelos/escolher_pasta_e_listar_arquivos.py): modelo simples para selecionar uma pasta de entrada e listar arquivos por extensao.
 - [Selecao de entradas por CLI ou janela](./modelos/selecao_entradas_cli_janela.py): modelo para scripts que precisam escolher pasta de entrada, pasta de saida e arquivo de apoio, com suporte a uso manual e automatizado.
 
 ### Notebooks
