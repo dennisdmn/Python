@@ -1,0 +1,7 @@
+# Dependencias minimas para executar o case de conciliacao contabil com razoes SAP HANA.
+# Bibliotecas da standard library usadas pelo script nao entram aqui.
+
+fastexcel==0.20.2
+openpyxl==3.1.5
+polars==1.40.1
+xlsxwriter==3.2.9

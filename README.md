@@ -27,6 +27,9 @@ A ideia aqui nao e manter um unico projeto, e sim reunir material reutilizavel, 
 
 ### Modelos reutilizaveis
 
+- [Modelo: Validacao de cabecalhos Excel](./modelos/validacao_cabecalhos_excel.py)
+- [Modelo: Selecao de entrada, saida e arquivo por CLI ou janela](./modelos/selecao_entrada_saida_arquivo.py)
+- [Modelo: Exportacao Excel profissional com XlsxWriter](./modelos/exportacao_excel_profissional.py)
 - [Modelo simples: Leitura de Excel com pandas e openpyxl](./modelos/leitura_excel_openpyxl_pandas.py)
 - [Modelo: Leitura de Excel com Polars e calamine](./modelos/leitura_excel_polars.md)
 - [Modelo basico: Escolher pasta pelo usuario](./modelos/escolher_pasta_basico.py)
@@ -36,6 +39,7 @@ A ideia aqui nao e manter um unico projeto, e sim reunir material reutilizavel, 
 
 ### Padroes operacionais
 
+- [Conciliacao Contabil com Razoes SAP HANA](./scripts/conciliacao_contabil_razoes_sap_hana/README.md): case operacional completo com validacao de layout, SQLite temporario, Excel profissional e build de executavel.
 - [Escolher pasta pelo usuario](./modelos/escolher_pasta_basico.py): modelo essencial para abrir uma janela local, selecionar uma pasta e retornar o caminho como `Path`.
 - [Escolher pasta e listar arquivos](./modelos/escolher_pasta_e_listar_arquivos.py): modelo simples para selecionar uma pasta de entrada e listar arquivos por extensao.
 - [Escolher pasta e inventariar arquivos](./modelos/escolher_pasta_e_inventariar_arquivos.py): modelo evoluido para listar arquivos com nr_arquivo, nome, extensao, tamanho, data de modificacao e caminho completo.
@@ -47,6 +51,7 @@ A ideia aqui nao e manter um unico projeto, e sim reunir material reutilizavel, 
 
 ### Documentacao e casos de sucesso
 
+- [Caso de Sucesso: Conciliacao Contabil com Razoes SAP HANA](./docs/casos_sucesso/conciliacao_contabil_razoes_sap_hana.md)
 - [Caso de Sucesso: Leitura de Excel com Polars](./docs/casos_sucesso/leitura_excel_polars.md)
 
 ## Como usar este repositorio
@@ -69,3 +74,5 @@ Os exemplos ficam agrupados por tema dentro de `exemplos/`:
 ## Diretriz de organizacao
 
 Prefira nomear arquivos pelo assunto e objetivo, evitando nomes vagos como `teste`, `final` e `v2`.
+
+
