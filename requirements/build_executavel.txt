@@ -1,0 +1,4 @@
+# Dependencias usadas apenas para gerar o executavel.
+# Nao sao necessarias para rodar o script em modo Python.
+
+pyinstaller==6.20.0
