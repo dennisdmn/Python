@@ -51,11 +51,11 @@ pip install -r .\requirements\build_executavel.txt
 
 ## Campos criticos dos razoes
 
-Se qualquer campo critico faltar, o arquivo e marcado como `REEXTRAIR`. Em modo `producao`, a conciliacao e interrompida para evitar evidencia incompleta.
+Se qualquer campo critico faltar, o arquivo e marcado como `REEXTRAIR`. Em modo `producao`, a conciliacao e interrompida para evitar evidencia incompleta. Os nomes abaixo devem ser mantidos exatamente como aparecem no SAP HANA.
 
-- `Conta do Razao`
-- `Lancamento contabil`
-- `Data de lancamento`
+- `Conta do Razão`
+- `Lançamento contábil`
+- `Data de lançamento`
 - `Mont.moeda empresa`
 - `Txt.it.partida indv.`
 - `Centro de custo`
@@ -65,12 +65,14 @@ Se qualquer campo critico faltar, o arquivo e marcado como `REEXTRAIR`. Em modo 
 
 Campos opcionais podem faltar sem bloquear a execucao:
 
-- `Chave de lancamento`
+- `Chave de lançamento`
 - `Nº de itens`
-- `Divisao`
-- `Tipo lcto.contabil`
+- `Divisão`
+- `Tipo lçto.contábil`
 
 ## Observacao sobre dados
 
 Este case nao inclui bases reais, balancetes reais nem executavel. Use dados ficticios ou extracoes autorizadas para testes locais.
+
+
 
