@@ -1,0 +1,17 @@
+Arquivo : arquivo.xlsx
+Abas    : ['Planilha1', 'Base']
+
+Aba     : Planilha1
+Colunas : 3
+Linhas  : 100 (estimado)
+    1. ID
+    2. Data
+    3. Valor
+
+Aba     : Base
+Colunas : 4
+Linhas  : 250 (estimado)
+    1. Empresa
+    2. Conta
+    3. Data
+    4. Valor
