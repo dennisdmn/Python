@@ -1,0 +1,5 @@
+arquivo        caminho                         tamanho_kb  modificado_em
+base_001.xlsx  C:\\caminho\\para\\base_001.xlsx       850.4  2026-06-10 09:30
+base_002.xlsx  C:\\caminho\\para\\base_002.xlsx      1290.8  2026-06-10 09:35
+
+Total: 2 arquivo(s)
