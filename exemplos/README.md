@@ -18,6 +18,7 @@ Use esta pasta para consultar rapidamente uma tecnica isolada, comparar abordage
 
 - [Selecao de diretorio sem funcao](./windows/exemplo_escolher_diretorio_sem_funcao.py)
 - [Selecao de diretorio com funcao reutilizavel](./windows/exemplo_escolher_diretorio_com_funcao.py)
+- [Selecao de pastas para conciliacao com Tkinter](./windows/exemplo_selecionar_pastas_conciliacao_tkinter.py)
 
 ## Criterios para novos exemplos
 
