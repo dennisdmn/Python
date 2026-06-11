@@ -24,6 +24,7 @@ A ideia aqui nao e manter um unico projeto, e sim reunir material reutilizavel, 
 - [Exemplo: Leitura de Excel com Polars e calamine](./exemplos/excel/polars_ler_excel_calamine.py)
 - [Exemplo: Selecionar diretorio no Windows sem funcao](./exemplos/windows/exemplo_escolher_diretorio_sem_funcao.py)
 - [Exemplo: Selecionar diretorio no Windows com funcao reutilizavel](./exemplos/windows/exemplo_escolher_diretorio_com_funcao.py)
+- [Exemplo: Selecionar pastas para conciliacao com Tkinter](./exemplos/windows/exemplo_selecionar_pastas_conciliacao_tkinter.py)
 
 ### Modelos reutilizaveis
 
