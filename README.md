@@ -41,7 +41,7 @@ A ideia aqui nao e manter um unico projeto, e sim reunir material reutilizavel, 
 ### Padroes operacionais
 
 - [Conciliacao Contabil com Razoes SAP HANA](./scripts/conciliacao_contabil_razoes_sap_hana/README.md): case operacional completo com validacao de layout, SQLite temporario, Excel profissional e build de executavel.
-- [Preparacao de Bases para Conciliacao](./scripts/preparacao_bases_conciliacao/README.md): script operacional para selecionar bases Legado x SAP e pasta de saida da evidencia de conciliacao por janela local.
+- [Preparacao de Bases para Conciliacao](./scripts/preparacao_bases_conciliacao/README.md): script operacional para selecionar bases Legado x SAP, validar arquivos `.xlsx`, `.xls` ou `.csv` e escolher a pasta de saida da evidencia por janela local.
 - [Escolher pasta pelo usuario](./modelos/escolher_pasta_basico.py): modelo essencial para abrir uma janela local, selecionar uma pasta e retornar o caminho como `Path`.
 - [Escolher pasta e listar arquivos](./modelos/escolher_pasta_e_listar_arquivos.py): modelo simples para selecionar uma pasta de entrada e listar arquivos por extensao.
 - [Escolher pasta e inventariar arquivos](./modelos/escolher_pasta_e_inventariar_arquivos.py): modelo evoluido para listar arquivos com nr_arquivo, nome, extensao, tamanho, data de modificacao e caminho completo.
@@ -64,7 +64,7 @@ A ideia aqui nao e manter um unico projeto, e sim reunir material reutilizavel, 
 - use `scripts/` para codigos mais operacionais ou recorrentes
 - use `notebooks/` para exploracao e prototipagem
 - use `benchmarks/` para testes de desempenho reproduziveis
-- use `templates/` para bases genericas de novos estudos ou implementacoes
+- use `templates/` para bases genericas de novos estudos e implementacoes
 
 ## Organizacao de exemplos
 
