@@ -1,3 +1,19 @@
+"""Staging operacional com SQLite.
+
+Objetivo:
+    Usar SQLite como camada temporaria para gravar, consultar e indexar
+    bases intermediarias durante rotinas operacionais.
+
+Quando usar:
+    - Bases grandes que pressionam memoria.
+    - Muitos joins ou filtros intermediarios.
+    - Necessidade de consultar dados com SQL.
+    - Processos que precisam de staging local controlado.
+
+Documentacao:
+    Consulte `python_operacional/docs/sqlite_cache.md` antes de alterar.
+"""
+
 from pathlib import Path
 import sqlite3
 import pandas as pd
