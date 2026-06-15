@@ -16,6 +16,22 @@ A pasta existe para evitar reescrever rotinas repetidas como escolher pasta, esc
 - `exportacao_excel.py`: exportacao Excel simples e segura.
 - `conciliacao.py`: funcoes genericas de conciliacao.
 
+## Documentacao por arquivo
+
+Cada modulo possui uma documentacao propria em `python_operacional/docs/`:
+
+- `docs/selecao_arquivos.md`
+- `docs/inventario_pastas.md`
+- `docs/validacao_layouts.md`
+- `docs/colunas.md`
+- `docs/leitura_excel_pandas.md`
+- `docs/leitura_excel_polars.md`
+- `docs/sqlite_cache.md`
+- `docs/exportacao_excel.md`
+- `docs/conciliacao.md`
+- `docs/catalogo.md`
+- `docs/init.md`
+
 ## Dependencias
 
 ```powershell
