@@ -1,3 +1,19 @@
+"""Validacao operacional de layouts por colunas.
+
+Objetivo:
+    Padronizar a verificacao de colunas obrigatorias e a identificacao
+    de tipo de arquivo por cabecalho.
+
+Quando usar:
+    - Antes de carregar bases completas.
+    - Antes de consolidar arquivos em lote.
+    - Antes de executar conciliacoes dependentes de layout fixo.
+
+Documentacao:
+    Consulte `python_operacional/docs/validacao_layouts.md` antes de alterar.
+"""
+
+
 def validar_colunas_obrigatorias(colunas_existentes, colunas_obrigatorias):
     existentes = set(colunas_existentes)
     obrigatorias = set(colunas_obrigatorias)
