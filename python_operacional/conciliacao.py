@@ -1,3 +1,23 @@
+"""Funcoes genericas de conciliacao por chaves.
+
+Objetivo:
+    Concentrar padroes reutilizaveis para comparar duas bases por
+    chaves comuns, calcular diferenca e classificar origem.
+
+Quando usar:
+    - Comparacao entre duas origens.
+    - Conciliacao de saldos ou quantidades.
+    - Diagnostico de registros apenas em uma das bases.
+
+Documentacao:
+    Consulte `python_operacional/docs/conciliacao.md` antes de alterar.
+
+Guia para IA:
+    Antes de criar um merge de conciliacao do zero, verificar se
+    `full_outer_conciliacao` atende ao caso. Regra de negocio deve ficar
+    no script operacional, nao neste modulo generico.
+"""
+
 import numpy as np
 import pandas as pd
 
