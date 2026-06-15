@@ -1,3 +1,22 @@
+"""Leitura operacional de Excel com pandas e openpyxl.
+
+Objetivo:
+    Padronizar a leitura de arquivos Excel individuais, amostras e
+    multiplos arquivos em uma pasta usando pandas.
+
+Quando usar:
+    - Leitura simples e compativel com pandas.
+    - Validacao de amostra antes do processamento completo.
+    - Consolidacao de arquivos Excel de uma pasta.
+
+Documentacao:
+    Consulte `python_operacional/docs/leitura_excel_pandas.md` antes de alterar.
+
+Guia para IA:
+    Antes de criar loops pandas para ler Excel, verificar se este modulo
+    atende. Para alto volume, comparar com leitura_excel_polars.py.
+"""
+
 from pathlib import Path
 import pandas as pd
 
