@@ -1,3 +1,22 @@
+"""Exportacao operacional de Excel com formato simples.
+
+Objetivo:
+    Padronizar a criacao de evidencias Excel com multiplas abas,
+    cabecalho simples e congelamento de painel.
+
+Quando usar:
+    - Evidencias de conciliacao.
+    - Relatorios operacionais.
+    - Arquivos de saida para analise manual.
+
+Documentacao:
+    Consulte `python_operacional/docs/exportacao_excel.md` antes de alterar.
+
+Guia para IA:
+    Antes de criar uma nova rotina de exportacao Excel, verificar se
+    `exportar_excel_seguro` e `ordenar_abas` atendem ao caso.
+"""
+
 from pathlib import Path
 import pandas as pd
 from openpyxl import load_workbook
