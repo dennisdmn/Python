@@ -1,3 +1,23 @@
+"""Utilidades operacionais para escolha e normalizacao de colunas.
+
+Objetivo:
+    Centralizar operacoes recorrentes de selecao, reducao e normalizacao
+    de colunas em DataFrames pandas.
+
+Quando usar:
+    - Bases com muitas colunas.
+    - Preparacao de evidencias.
+    - Reducao de memoria antes de joins e conciliacoes.
+    - Padronizacao de campos antes de validar layouts.
+
+Documentacao:
+    Consulte `python_operacional/docs/colunas.md` antes de alterar este modulo.
+
+Guia para IA:
+    Antes de escrever selecoes manuais como `df[[...]]` em scripts
+    operacionais, verificar se `escolher_colunas` atende ao caso.
+"""
+
 import pandas as pd
 
 
