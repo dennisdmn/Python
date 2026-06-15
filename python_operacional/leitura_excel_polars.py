@@ -1,3 +1,23 @@
+"""Leitura operacional de Excel com Polars e fastexcel.
+
+Objetivo:
+    Padronizar leitura performatica de Excel usando Polars com engine
+    calamine, suportada pelo pacote fastexcel.
+
+Quando usar:
+    - Muitos arquivos Excel.
+    - Planilhas grandes.
+    - Necessidade de leitura mais rapida que pandas/openpyxl.
+    - Etapas intermediarias antes de converter para pandas ou SQLite.
+
+Documentacao:
+    Consulte `python_operacional/docs/leitura_excel_polars.md` antes de alterar.
+
+Guia para IA:
+    Quando o usuario mencionar lentidao, alto volume ou leitura em lote,
+    considerar este modulo antes de sugerir pandas puro.
+"""
+
 from pathlib import Path
 import polars as pl
 
