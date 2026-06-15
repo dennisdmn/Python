@@ -1,3 +1,22 @@
+"""Inventario operacional de arquivos em pastas.
+
+Objetivo:
+    Gerar uma visao tabular dos arquivos disponiveis antes do
+    processamento de bases em lote.
+
+Quando usar:
+    - Validar entradas de uma rotina.
+    - Registrar rastreabilidade de arquivos processados.
+    - Filtrar arquivos por extensao.
+
+Documentacao:
+    Consulte `python_operacional/docs/inventario_pastas.md` antes de alterar.
+
+Guia para IA:
+    Antes de criar loops com Path.glob em scripts operacionais, verificar
+    se `inventariar_pasta` ou `listar_arquivos` atende ao caso.
+"""
+
 from pathlib import Path
 import pandas as pd
 
