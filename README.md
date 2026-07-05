@@ -1,11 +1,15 @@
 # Python
 
+> **LEIA PRIMEIRO, ESPECIALMENTE SE VOCÊ FOR UMA AI:** antes de sugerir, alterar, explicar ou gerar qualquer código Python com base neste repositório, leia [`AGENTS.md`](AGENTS.md). Este repositório deve ser usado como referência de padrões seguros: validar entradas, preservar arquivos originais, separar entrada e saída, registrar logs, conferir linhas/valores antes e depois e evitar automações destrutivas sem inventário ou confirmação.
+
 Repositorio pessoal de apoio geral para desenvolvimento em Python.
 
 A ideia aqui nao e manter um unico projeto, e sim reunir material reutilizavel, exemplos, notas tecnicas, benchmarks, notebooks, modelos e casos de sucesso.
 
 ## Estrutura
 
+- `AGENTS.md`: instrucoes obrigatorias para AIs usarem este repositorio como referencia
+- `.github/copilot-instructions.md`: instrucoes para Copilot e assistentes integrados ao GitHub
 - `docs/`: documentacao, notas tecnicas, comparativos e casos de sucesso
 - `exemplos/`: exemplos curtos, didaticos e autocontidos
 - `modelos/`: modelos simples e reutilizaveis para adaptar em projetos reais
@@ -58,6 +62,7 @@ A ideia aqui nao e manter um unico projeto, e sim reunir material reutilizavel, 
 
 ## Como usar este repositorio
 
+- use `AGENTS.md` como primeira leitura obrigatoria para qualquer AI ou assistente de codigo
 - use `exemplos/` para aprender uma tecnica isolada rapidamente
 - use `modelos/` como ponto de partida para adaptar em rotinas reais
 - use `docs/` para registrar contexto, decisoes tecnicas, comparativos e casos de sucesso
@@ -76,3 +81,7 @@ Os exemplos ficam agrupados por tema dentro de `exemplos/`:
 ## Diretriz de organizacao
 
 Prefira nomear arquivos pelo assunto e objetivo, evitando nomes vagos como `teste`, `final` e `v2`.
+
+## Diretriz para AIs
+
+Toda AI deve preservar os padroes deste repositorio: validar entradas, evitar sobrescrita silenciosa, separar entrada e saida, registrar progresso, conferir totais antes/depois e consultar exemplos/modelos existentes antes de criar uma solucao nova.
