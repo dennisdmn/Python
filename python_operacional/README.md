@@ -15,6 +15,7 @@ A pasta existe para evitar reescrever rotinas repetidas como escolher pasta, esc
 - `sqlite_cache.py`: gravacao e leitura de tabelas temporarias em SQLite.
 - `exportacao_excel.py`: exportacao Excel simples e segura.
 - `conciliacao.py`: funcoes genericas de conciliacao.
+- `periodos.py`: validacao e calculo de periodos mensais no formato `AAAAMM`.
 
 ## Documentacao por arquivo
 
@@ -29,6 +30,7 @@ Cada modulo possui uma documentacao propria em `python_operacional/docs/`:
 - `docs/sqlite_cache.md`
 - `docs/exportacao_excel.md`
 - `docs/conciliacao.md`
+- `docs/periodos.md`
 - `docs/catalogo.md`
 - `docs/init.md`
 

@@ -23,6 +23,7 @@ Permitir que pessoas e assistentes de IA entendam rapidamente:
 - `sqlite_cache.md`
 - `exportacao_excel.md`
 - `conciliacao.md`
+- `periodos.md`
 - `catalogo.md`
 - `init.md`
 - `requirements.md`

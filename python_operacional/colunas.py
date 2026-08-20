@@ -36,6 +36,21 @@ def normalizar_nomes_colunas(df: pd.DataFrame):
     return novo
 
 
+def limpa_nomes_colunas(df: pd.DataFrame) -> pd.DataFrame:
+    """Padroniza nomes de colunas em minusculas, sem acentos e snake_case."""
+    df.columns = (
+        df.columns
+        .str.strip()
+        .str.lower()
+        .str.normalize("NFKD")
+        .str.encode("ascii", errors="ignore")
+        .str.decode("ascii")
+        .str.replace(r"[^a-z0-9]+", "_", regex=True)
+        .str.strip("_")
+    )
+    return df
+
+
 def colunas_por_texto(df: pd.DataFrame, termos):
     termos = [t.lower() for t in termos]
     cols = [c for c in df.columns if any(t in str(c).lower() for t in termos)]

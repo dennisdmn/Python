@@ -22,4 +22,5 @@ __all__ = [
     'sqlite_cache',
     'exportacao_excel',
     'conciliacao',
+    'periodos',
 ]
