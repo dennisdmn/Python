@@ -18,6 +18,7 @@
 | Exportar Excel seguro | `exportacao_excel.py` | `exportar_excel_seguro` |
 | Ordenar abas | `exportacao_excel.py` | `ordenar_abas` |
 | Conciliar bases | `conciliacao.py` | `full_outer_conciliacao` |
+| Calcular periodo anterior | `periodos.py` | `periodo_anterior` |
 
 ## Uso por IA
 
