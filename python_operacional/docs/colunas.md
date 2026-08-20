@@ -12,6 +12,8 @@ Use quando a base tem muitas colunas, quando o processo precisa preservar uma or
 
 - `escolher_colunas`: seleciona colunas desejadas e valida obrigatorias.
 - `normalizar_nomes_colunas`: remove espacos laterais dos nomes das colunas.
+- `limpa_nomes_colunas`: converte nomes para minusculas, remove acentos e
+  padroniza em `snake_case`.
 - `colunas_por_texto`: seleciona colunas cujo nome contem termos informados.
 
 ## Exemplo de uso
@@ -25,6 +27,17 @@ base = escolher_colunas(
     obrigatorias=['EMPRESA', 'VALOR'],
 )
 ```
+
+Para limpar os nomes das colunas no proprio DataFrame:
+
+```python
+from python_operacional.colunas import limpa_nomes_colunas
+
+limpa_nomes_colunas(df)
+```
+
+Essa funcao foi extraida da rotina de producao `IFRS_15_EBS` para reuso em
+outros processos com pandas.
 
 ## Cuidados
 
