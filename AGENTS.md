@@ -165,6 +165,9 @@ Ao adicionar um script, modelo ou exemplo, inclua documentação suficiente para
 - Para mapear origens e destinos de arquivos `.sql`, consulte [`scripts/linhagem_sql/README.md`](scripts/linhagem_sql/README.md) e reutilize o analisador existente.
 - Preserve os arquivos de entrada. Selecione o dialeto do arquivo, como `oracle`, e registre quais arquivos falharam. Use `sqllineage` para CTEs e outros SQLs fora do modo didático.
 - Ao exportar a linhagem para Excel, mantenha o status de cada arquivo e o papel de cada tabela. Preserve relatórios existentes e não interprete nomes vindos do SQL como fórmulas do Excel.
+- Preserve a diferença entre `Dialeto provável` e `Modo de análise`: o primeiro é uma estimativa baseada em sinais do arquivo; o segundo registra o dialeto efetivamente passado ao SQLLineage.
+- Não substitua `<default>` silenciosamente. Esse marcador indica que o SQL não informou schema. Explique-o na documentação ou permita que o usuário qualifique a tabela no próprio SQL.
+- Mudanças na detecção de dialeto exigem exemplos positivos, casos indeterminados e proteção contra falsos sinais dentro de comentários e literais.
 - Trate o resultado como linhagem estática de tabelas. CTEs são etapas da consulta; SQL dinâmico e definições de views ausentes podem deixar dependências incompletas.
 - Use exemplos fictícios e confira uma saída esperada antes de publicar mudanças.
 

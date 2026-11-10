@@ -9,6 +9,8 @@ from io import BytesIO
 from pathlib import Path
 from textwrap import wrap
 
+__version__ = "1.2.0"
+
 
 @dataclass(frozen=True)
 class Linhagem:
@@ -25,6 +27,57 @@ class ResultadoArquivo:
     arquivo: Path
     linhagem: Linhagem | None = None
     erro: str = ""
+    dialeto_provavel: str = "Não avaliado"
+
+
+# Sinais indicativos. Palavras comuns como SELECT, WITH e LIMIT não classificam.
+SINAIS_DIALETO = {
+    "Oracle": (
+        r"\bROWNUM\b|\bCONNECT\s+BY\b|\bSYS_CONTEXT\s*\(|\.\s*(?:NEXTVAL|CURRVAL)\b",
+    ),
+    "SQLite": (
+        r"\b(?:sqlite_master|sqlite_schema|sqlite_temp_master|sqlite_temp_schema)\b",
+        r"\bAUTOINCREMENT\b|\bWITHOUT\s+ROWID\b",
+        r"\bPRAGMA\s+(?:\w+\s*\.\s*)?(?:table_info|table_xinfo|journal_mode|foreign_keys|user_version)\b",
+        r"\b(?:julianday|unixepoch|sqlite_version|last_insert_rowid)\s*\(",
+    ),
+    "SQL Server": (
+        r"\bSELECT\s+(?:(?:ALL|DISTINCT)\s+)?TOP\s*(?:\(\s*\d|\d)",
+        r"@@(?:ROWCOUNT|TRANCOUNT)\b|\bsp_executesql\b|\bsys\s*\.\s*(?:objects|columns)\b",
+    ),
+    "PostgreSQL": (
+        r"\bpg_catalog\s*\.|\bpg_typeof\s*\(|\bSET\s+search_path\b",
+    ),
+    "MySQL / MariaDB": (
+        r"\bAUTO_INCREMENT\b|\bON\s+DUPLICATE\s+KEY\s+UPDATE\b|\bENGINE\s*=\s*InnoDB\b",
+    ),
+}
+
+
+def identificar_dialeto(sql):
+    """Estima o dialeto a partir da sintaxe, sem conectar ao banco."""
+    # Mascara comentários e literais para não usar seu conteúdo como evidência.
+    codigo = re.sub(
+        r"--[^\r\n]*|/\*.*?\*/|(?P<tag>\$(?:[A-Za-z_]\w*)?\$).*?(?P=tag)"
+        r"|'(?:''|[^'])*'|\"(?:\"\"|[^\"])*\"|`(?:``|[^`])*`|\[(?:\]\]|[^\]])*\]",
+        lambda token: " '' " if token[0].startswith("'") else " ",
+        sql,
+        flags=re.S,
+    )
+    encontrados = [
+        nome for nome, sinais in SINAIS_DIALETO.items()
+        if any(re.search(sinal, codigo, re.I) for sinal in sinais)
+    ]
+    # NVL também existe em outros bancos. Use apenas como indício combinado
+    # e sem sinais de outro dialeto reconhecido, para o exemplo Oracle didático.
+    if not encontrados and re.search(r"\bNVL\s*\(", codigo, re.I) and re.search(
+        r"\b(?:DATE\s+''|FROM\s+DUAL\b)", codigo, re.I
+    ):
+        encontrados.append("Oracle")
+
+    if len(encontrados) > 1:
+        return "Ambíguo: " + " | ".join(encontrados)
+    return encontrados[0] if encontrados else "Indeterminado"
 
 
 def abrir_seletor(salvar=False):
@@ -159,23 +212,40 @@ def exportar_excel(saida, resultados):
             if info else (None,) * 4
         )
         resumo.append((
-            numero, item.arquivo.name, "OK" if info else "Erro", info.modo if info else "",
+            numero, item.arquivo.name, item.dialeto_provavel, "OK" if info else "Erro", info.modo if info else "",
             *contagens, item.erro, str(item.arquivo.absolute()),
         ))
         if info:
             for papel, nomes in (("Origem", info.origens), ("Destino", info.destinos), ("Intermediária", info.intermediarias)):
-                tabelas.extend((numero, item.arquivo.name, papel, tabela) for tabela in nomes)
+                tabelas.extend(
+                    (
+                        numero,
+                        item.arquivo.name,
+                        item.dialeto_provavel,
+                        info.modo,
+                        papel,
+                        tabela,
+                    )
+                    for tabela in nomes
+                )
 
     # Gera antes de abrir o destino; dados do SQL são tratados como texto.
     memoria = BytesIO()
     with Workbook(memoria, {"in_memory": True, "strings_to_formulas": False, "strings_to_urls": False}) as workbook:
         cabecalho = workbook.add_format({"bold": True, "font_color": "white", "bg_color": "#305786"})
         escrever_aba(workbook, "Resumo", (
-            "ID", "Arquivo", "Status", "Modo de análise", "Comandos", "Origens",
+            "ID", "Arquivo", "Dialeto provável", "Status", "Modo de análise", "Comandos", "Origens",
             "Destinos", "Intermediárias", "Mensagem de erro", "Caminho do SQL",
-        ), (7, 29, 11, 34, 12, 10, 11, 16, 52, 48), resumo, cabecalho, quebrar=(8, 9))
-        escrever_aba(workbook, "Tabelas", ("ID", "Arquivo", "Papel", "Tabela"),
-                     (7, 29, 16, 48), tabelas, cabecalho)
+        ), (7, 29, 28, 11, 34, 12, 10, 11, 16, 52, 48), resumo, cabecalho, quebrar=(2, 9, 10))
+        escrever_aba(
+            workbook,
+            "Tabelas",
+            ("ID", "Arquivo", "Dialeto provável", "Modo de análise", "Papel", "Tabela"),
+            (7, 29, 28, 34, 16, 48),
+            tabelas,
+            cabecalho,
+            quebrar=(2,),
+        )
 
     # A abertura exclusiva evita sobrescrever um arquivo criado durante a análise.
     with saida.open("xb") as arquivo:
@@ -190,6 +260,7 @@ def main():
     parser.add_argument("arquivos", nargs="*", help="Caminhos dos arquivos .sql; sem eles, abre o seletor.")
     parser.add_argument("--dialeto", default="ansi", help="Dialeto para o SQLLineage, por exemplo oracle.")
     parser.add_argument("--excel", type=Path, metavar="ARQUIVO.xlsx", help="Caminho do relatório Excel.")
+    parser.add_argument("--versao", action="version", version=f"%(prog)s {__version__}")
     args = parser.parse_args()
 
     try:
@@ -203,18 +274,20 @@ def main():
     resultados = []
     for caminho in caminhos:
         arquivo = Path(caminho)
+        dialeto_provavel = "Não avaliado"
         try:
             if arquivo.suffix.lower() != ".sql":
                 raise ValueError("Escolha um arquivo com extensão .sql.")
             sql = arquivo.read_text(encoding="utf-8-sig")
+            dialeto_provavel = identificar_dialeto(sql)
             linhagem = analisar_sql(sql, args.dialeto)
         except Exception as erro:
             # Se um arquivo não puder ser analisado, continua com os demais.
             mensagem = str(erro) or type(erro).__name__
-            resultados.append(ResultadoArquivo(arquivo, erro=mensagem))
+            resultados.append(ResultadoArquivo(arquivo, erro=mensagem, dialeto_provavel=dialeto_provavel))
             print(f"Arquivo: {arquivo.name}\nErro: {mensagem}\n", file=sys.stderr, flush=True)
         else:
-            resultados.append(ResultadoArquivo(arquivo, linhagem))
+            resultados.append(ResultadoArquivo(arquivo, linhagem, dialeto_provavel=dialeto_provavel))
             print(f"Arquivo: {arquivo.name}\n{linhagem.texto_terminal}\n", flush=True)
 
     total = len(caminhos)
