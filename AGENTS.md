@@ -160,6 +160,13 @@ Ao adicionar um script, modelo ou exemplo, inclua documentação suficiente para
 - cuidados;
 - exemplo de execução.
 
+### 11. Linhagem SQL deve ser analisada sem executar o código
+
+- Para mapear origens e destinos de arquivos `.sql`, consulte [`scripts/linhagem_sql/README.md`](scripts/linhagem_sql/README.md) e reutilize o analisador existente.
+- Preserve os arquivos de entrada. Selecione o dialeto do arquivo, como `oracle`, e registre quais arquivos falharam. Use `sqllineage` para CTEs e outros SQLs fora do modo didático.
+- Trate o resultado como linhagem estática de tabelas. CTEs são etapas da consulta; SQL dinâmico e definições de views ausentes podem deixar dependências incompletas.
+- Use exemplos fictícios e confira uma saída esperada antes de publicar mudanças.
+
 ## O que uma AI não deve fazer
 
 - Não sugerir apagar ou sobrescrever arquivos sem inventário, backup ou confirmação.
