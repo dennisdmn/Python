@@ -1,1 +1,2 @@
 sqllineage>=1.5,<2
+xlsxwriter>=3,<4

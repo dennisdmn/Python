@@ -43,7 +43,7 @@ A ideia aqui nao e manter um unico projeto, e sim reunir material reutilizavel, 
 - [Modelo: Selecao de entradas por CLI ou janela](./modelos/selecao_entradas_cli_janela.py)
 
 ### Padroes operacionais
-- [Linhagem de tabelas em arquivos SQL](./scripts/linhagem_sql/README.md): selecione um ou vários `.sql` e veja as tabelas de origem e destino sem executar consultas.
+- [Linhagem de tabelas em arquivos SQL](./scripts/linhagem_sql/README.md): selecione um ou vários `.sql` e veja as tabelas de origem e destino no terminal ou em Excel, sem executar consultas.
 
 - [Conciliacao Contabil com Razoes SAP HANA](./scripts/conciliacao_contabil_razoes_sap_hana/README.md): case operacional completo com validacao de layout, SQLite temporario, Excel profissional e build de executavel.
 - [Preparacao de Bases para Conciliacao](./scripts/preparacao_bases_conciliacao/README.md): script operacional para selecionar bases Legado x SAP, validar arquivos `.xlsx`, `.xls` ou `.csv` e escolher a pasta de saida da evidencia por janela local.

@@ -164,6 +164,7 @@ Ao adicionar um script, modelo ou exemplo, inclua documentação suficiente para
 
 - Para mapear origens e destinos de arquivos `.sql`, consulte [`scripts/linhagem_sql/README.md`](scripts/linhagem_sql/README.md) e reutilize o analisador existente.
 - Preserve os arquivos de entrada. Selecione o dialeto do arquivo, como `oracle`, e registre quais arquivos falharam. Use `sqllineage` para CTEs e outros SQLs fora do modo didático.
+- Ao exportar a linhagem para Excel, mantenha o status de cada arquivo e o papel de cada tabela. Preserve relatórios existentes e não interprete nomes vindos do SQL como fórmulas do Excel.
 - Trate o resultado como linhagem estática de tabelas. CTEs são etapas da consulta; SQL dinâmico e definições de views ausentes podem deixar dependências incompletas.
 - Use exemplos fictícios e confira uma saída esperada antes de publicar mudanças.
 
